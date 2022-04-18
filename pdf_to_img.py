@@ -23,5 +23,6 @@ for x in glob.glob("./pdf/*.pdf"):
         image_path = f'{image_dir}/{file_name}'
         # PNGで保存
         page.save(str(image_path), "PNG")
+
 # poppler
-# https://khufrudamonotes.com/pdf-to-image-python
+# Reference & Copied from: https://khufrudamonotes.com/pdf-to-image-python

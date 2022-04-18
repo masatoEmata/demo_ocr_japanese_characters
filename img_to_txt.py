@@ -15,6 +15,7 @@ class ImageToTxt:
         self.tesseract = tools[0]
 
     def open_img(self, path: Path):
+        print(f'FILE NAME: {path.name}')
         # img = Image.open(path)
         im_gray = cv2.imread(str(path), 0)
         path_gray = f'./input/img/img_gray/{path.name}'
@@ -37,9 +38,9 @@ class ImageToTxt:
             self.img_to_str(img, i)
 
     def all_img_to_str(self):
-        for path_str in glob.glob(self.PATH_PATTERN):
+        all_img_path = glob.glob(self.PATH_PATTERN)
+        for path_str in all_img_path:
             path = Path(path_str)
-            print(f'FILE NAME: {path.name}')
             img = self.open_img(path)
             self.all_layout_img_to_str(img)
 
