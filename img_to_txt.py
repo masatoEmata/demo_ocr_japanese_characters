@@ -11,13 +11,13 @@ tesseract = tools[0]
 
 
 # PDFファイルのパスを取得し順番に捌いていく
-for x in glob.glob("./img_file/*sample.jpg"):
+for x in glob.glob("./input/img/*sample_2.jpg"):
     path = Path(x)
-    img = Image.open(path)
-    # im_gray = cv2.imread(str(path), 0)
-    # path_gray = f'./img_file/img_gray/{path.name}'
-    # cv2.imwrite(path_gray, im_gray)
-    # img = Image.open(path_gray)
+    # img = Image.open(path)
+    im_gray = cv2.imread(str(path), 0)
+    path_gray = f'./input/img/img_gray/{path.name}'
+    cv2.imwrite(path_gray, im_gray)
+    img = Image.open(path_gray)
 
     # img.show()
     for i in range(13):

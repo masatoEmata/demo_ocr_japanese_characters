@@ -10,14 +10,14 @@ os.environ["PATH"] += os.pathsep + str(poppler_dir)
 
 
 # PDFファイルのパスを取得し順番に捌いていく
-for x in glob.glob("./pdf_file/*.pdf"):
+for x in glob.glob("./pdf/*.pdf"):
     pdf_path = Path(x)
 
     # pdfから画像に変換
     pages = convert_from_path(str(pdf_path), dpi=150)
 
     # 画像ファイルを１ページずつ保存
-    image_dir = Path("./img_file")
+    image_dir = Path("./img")
     for i, page in enumerate(pages):
         file_name = f'{pdf_path.stem}_{i + 1}.png'
         image_path = f'{image_dir}/{file_name}'

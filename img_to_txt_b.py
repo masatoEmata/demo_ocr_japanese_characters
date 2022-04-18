@@ -20,7 +20,7 @@ print(langs,'などの言語を指定できます。')
 
 # OCRを実行する画像イメージや言語指定、オプション指定
 txt = tool.image_to_string( 
-    Image.open(rf"./img_file/message_sample.png"),  # ここを変更
+    Image.open(rf"./input/img/message_sample.png"),  # ここを変更
     lang='script/Japanese',
     builder=pyocr.builders.TextBuilder(tesseract_layout=11) #オプション番号は必要に応じて変更してください。デフォルトは「3」
 )
